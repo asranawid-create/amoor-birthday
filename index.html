@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ffe5ef">
+<title>برای آمور 🎀</title>
+<style>
+:root{--pink:#ff6fa8;--deep:#c83778;--pale:#fff0f6;--ink:#71334f}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;overflow-x:hidden;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,sans-serif;color:var(--ink);
+background:radial-gradient(circle at 15% 12%,#fff 0 2px,transparent 3px),linear-gradient(145deg,#fff7fb,#ffe1ed 55%,#ffd0e3);display:flex;align-items:center;justify-content:center;padding:24px}
+.card{width:min(680px,100%);text-align:center;background:#ffffffd9;border:1px solid #fff;border-radius:30px;padding:clamp(24px,6vw,48px);box-shadow:0 18px 55px #c8377825;position:relative;z-index:2}
+.bow{font-size:3rem;filter:drop-shadow(0 5px 7px #e97ca633);animation:bob 2s ease-in-out infinite}
+h1{font-size:clamp(2rem,7vw,3.4rem);margin:10px 0;color:var(--deep)}
+.sub{font-size:1.05rem;line-height:1.9;margin:0 auto 24px;max-width:490px}
+button{border:0;border-radius:999px;padding:15px 25px;background:linear-gradient(135deg,#ff8fba,#e64f91);color:white;font-weight:800;font-size:1rem;box-shadow:0 8px 20px #e64f9138;cursor:pointer}
+button:focus-visible{outline:3px solid #8e2b5b;outline-offset:4px}
+#letter{display:none;text-align:right;line-height:2.15;font-size:1.05rem;margin-top:28px;white-space:pre-line;animation:appear .9s ease both}
+#letter.show{display:block}
+.signature{text-align:center;color:var(--deep);font-weight:800;margin-top:20px}
+.footer{font-size:.85rem;opacity:.75;margin-top:24px}
+.heart{position:fixed;bottom:-50px;z-index:1;pointer-events:none;animation:floatUp linear forwards;filter:drop-shadow(0 4px 6px #cf397544)}
+@keyframes floatUp{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+@keyframes appear{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-8px) rotate(3deg)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="bow" aria-hidden="true">🎀</div>
+  <p class="sub">یه سورپرایز کوچولو برای یه آدم خیلی خاص… 💗</p>
+  <h1>آمور جاننن! 💕</h1>
+  <p class="sub">آماده‌ای؟ اول روی دکمه بزن… ✨</p>
+  <button id="open" type="button">باز کن، آمور 🎁</button>
+  <section id="letter" aria-live="polite">
+    آمورِ قشنگم، تولدت مبارررک! 🎂🎀💗
+
+    امروز روز تولد یکی از خاص‌ترین آدم‌های دنیامه؛ کسی که بودنش برای من یه حس قشنگ و دوست‌داشتنیه. از ته قلبم آرزو می‌کنم سال جدید زندگیت پر از خنده‌های واقعی، آرامش، خبرهای خوب و آرزوهایی باشه که یکی‌یکی به حقیقت تبدیل می‌شن. 🥹💞
+
+    امیدوارم هر روز دلیل تازه‌ای برای لبخند زدن داشته باشی، آدم‌های مهربون دورت باشن و هیچ‌وقت فراموش نکنی که چقدر ارزشمند و دوست‌داشتنی هستی. حتی توی روزهایی که همه‌چیز سخت به نظر می‌رسه، امیدوارم ته دلت یه نور کوچولو روشن بمونه و یادت بیاره که روزهای قشنگ‌تری هم در راهن. ✨🫂
+
+    ممنونم که خودتی، آمور. امیدوارم امسال به چیزهایی برسی که مدت‌هاست توی دلت نگه داشتی، کلی خاطره‌ی شیرین بسازی و از ته دل به خودت افتخار کنی. دلم می‌خواد همیشه بدرخشی، بخندی و زندگی باهات مهربون باشه. 💗
+
+    تولدت مبارک، دخترِ دوست‌داشتنی! این صفحه کوچولو فقط برای اینه که یادت بندازه امروز، روز توئه و تو لایق کلی عشق و خوشحالی هستی. 🎂💋🎀
+    <div class="signature">LOVE YOU SO MUCH, AMOOR! 💗♾️</div>
+  </section>
+  <div class="footer">ساخته‌شده با عشق، فقط برای آمور 🎀</div>
+</main>
+<script>
+const btn=document.getElementById('open'), letter=document.getElementById('letter');
+let launched=false;
+function heart(){
+ const el=document.createElement('span');
+ el.className='heart';
+ el.textContent=['💗','💖','💕','💞','🩷','🎀'][Math.floor(Math.random()*6)];
+ el.style.left=(Math.random()*100)+'vw';
+ el.style.fontSize=(18+Math.random()*28)+'px';
+ el.style.animationDuration=(4+Math.random()*4)+'s';
+ document.body.appendChild(el);
+ setTimeout(()=>el.remove(),8500);
+}
+function openSurprise(){
+ letter.classList.add('show');
+ btn.textContent='تولدت مبارک آمور! 💗';
+ if(!launched){launched=true;for(let i=0;i<22;i++)setTimeout(heart,i*110);setInterval(heart,450);}
+}
+btn.addEventListener('click',openSurprise);
+// Open the requested Instagram Reel as soon as the page loads.
+window.addEventListener('load',()=>{
+  openSurprise();
+  setTimeout(()=>{ window.location.href='https://www.instagram.com/reel/DeCh8ibt7Gd/?obrf=MTlvaTRtOGNpMmhhMg=='; },1800);
+});
+</script>
+</body>
+</html>
